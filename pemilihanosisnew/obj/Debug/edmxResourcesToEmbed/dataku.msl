@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ujicoba2ModelStoreContainer" CdmEntityContainer="ujicoba2Entities1">
+    <EntitySetMapping Name="databarang">
+      <EntityTypeMapping TypeName="ujicoba2Model.databarang">
+        <MappingFragment StoreEntitySet="databarang">
+          <ScalarProperty Name="kode_barang" ColumnName="kode_barang" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga_beli" ColumnName="harga_beli" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="harga_jual" ColumnName="harga_jual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datamember">
+      <EntityTypeMapping TypeName="ujicoba2Model.datamember">
+        <MappingFragment StoreEntitySet="datamember">
+          <ScalarProperty Name="idmember" ColumnName="idmember" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="diskon" ColumnName="diskon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datapegawai">
+      <EntityTypeMapping TypeName="ujicoba2Model.datapegawai">
+        <MappingFragment StoreEntitySet="datapegawai">
+          <ScalarProperty Name="idpegawai" ColumnName="idpegawai" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="level" ColumnName="level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datatransaksifull">
+      <EntityTypeMapping TypeName="ujicoba2Model.datatransaksifull">
+        <MappingFragment StoreEntitySet="datatransaksifull">
+          <ScalarProperty Name="kode_transaksi" ColumnName="kode_transaksi" />
+          <ScalarProperty Name="tanggal" ColumnName="tanggal" />
+          <ScalarProperty Name="harga_total" ColumnName="harga_total" />
+          <ScalarProperty Name="diskon" ColumnName="diskon" />
+          <ScalarProperty Name="grand_total" ColumnName="grand_total" />
+          <ScalarProperty Name="member" ColumnName="member" />
+          <ScalarProperty Name="petugas" ColumnName="petugas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ujicoba2Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datatransaksibarang">
+      <EntityTypeMapping TypeName="ujicoba2Model.datatransaksibarang">
+        <MappingFragment StoreEntitySet="datatransaksibarang">
+          <ScalarProperty Name="kode_transaksi" ColumnName="kode_transaksi" />
+          <ScalarProperty Name="kode_barang" ColumnName="kode_barang" />
+          <ScalarProperty Name="jumlah" ColumnName="jumlah" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

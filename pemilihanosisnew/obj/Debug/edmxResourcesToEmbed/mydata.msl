@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bersamaModelStoreContainer" CdmEntityContainer="bersamaEntities">
+    <EntitySetMapping Name="databarangs">
+      <EntityTypeMapping TypeName="bersamaModel.databarang">
+        <MappingFragment StoreEntitySet="databarang">
+          <ScalarProperty Name="kode_barang" ColumnName="kode_barang" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datamembers">
+      <EntityTypeMapping TypeName="bersamaModel.datamember">
+        <MappingFragment StoreEntitySet="datamember">
+          <ScalarProperty Name="idmember" ColumnName="idmember" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="diskon" ColumnName="diskon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="datausers">
+      <EntityTypeMapping TypeName="bersamaModel.datauser">
+        <MappingFragment StoreEntitySet="datauser">
+          <ScalarProperty Name="iduser" ColumnName="iduser" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="level" ColumnName="level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaksifulls">
+      <EntityTypeMapping TypeName="bersamaModel.transaksifull">
+        <MappingFragment StoreEntitySet="transaksifull">
+          <ScalarProperty Name="kode_transaksi" ColumnName="kode_transaksi" />
+          <ScalarProperty Name="tanggal" ColumnName="tanggal" />
+          <ScalarProperty Name="harga_total" ColumnName="harga_total" />
+          <ScalarProperty Name="diskon" ColumnName="diskon" />
+          <ScalarProperty Name="grand_total" ColumnName="grand_total" />
+          <ScalarProperty Name="bayar" ColumnName="bayar" />
+          <ScalarProperty Name="kembali" ColumnName="kembali" />
+          <ScalarProperty Name="petugas" ColumnName="petugas" />
+          <ScalarProperty Name="member" ColumnName="member" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaksi_in">
+      <EntityTypeMapping TypeName="bersamaModel.transaksi_in">
+        <MappingFragment StoreEntitySet="transaksi_in">
+          <ScalarProperty Name="kode_transaksi" ColumnName="kode_transaksi" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+          <ScalarProperty Name="jumlah" ColumnName="jumlah" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="bayar" ColumnName="bayar" />
+          <ScalarProperty Name="kembali" ColumnName="kembali" />
+          <ScalarProperty Name="diskon" ColumnName="diskon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaksibarangs">
+      <EntityTypeMapping TypeName="bersamaModel.transaksibarang">
+        <MappingFragment StoreEntitySet="transaksibarang">
+          <ScalarProperty Name="kode_transaksi" ColumnName="kode_transaksi" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+          <ScalarProperty Name="jumlah" ColumnName="jumlah" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

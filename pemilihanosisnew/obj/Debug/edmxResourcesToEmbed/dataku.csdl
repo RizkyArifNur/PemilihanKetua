@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ujicoba2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="databarang">
+    <Key>
+      <PropertyRef Name="kode_barang" />
+    </Key>
+    <Property Name="kode_barang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="harga_beli" Type="Int64" Nullable="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <Property Name="harga_jual" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="datatransaksibarang" Relationship="Self.FK_datatransaksibarang_databarang" FromRole="databarang" ToRole="datatransaksibarang" />
+  </EntityType>
+  <EntityType Name="datamember">
+    <Key>
+      <PropertyRef Name="idmember" />
+    </Key>
+    <Property Name="idmember" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diskon" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datapegawai">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="idpegawai" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="level" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datatransaksifull">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+    </Key>
+    <Property Name="kode_transaksi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tanggal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="harga_total" Type="Int64" Nullable="false" />
+    <Property Name="diskon" Type="Int32" Nullable="false" />
+    <Property Name="grand_total" Type="Int64" Nullable="false" />
+    <Property Name="member" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="petugas" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="datatransaksibarang" Relationship="Self.FK_datatransaksibarang_datatransaksifull" FromRole="datatransaksifull" ToRole="datatransaksibarang" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="datatransaksibarang">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="kode_barang" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="kode_transaksi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kode_barang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="jumlah" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="databarang" Relationship="Self.FK_datatransaksibarang_databarang" FromRole="datatransaksibarang" ToRole="databarang" />
+    <NavigationProperty Name="datatransaksifull" Relationship="Self.FK_datatransaksibarang_datatransaksifull" FromRole="datatransaksibarang" ToRole="datatransaksifull" />
+  </EntityType>
+  <Association Name="FK_datatransaksibarang_databarang">
+    <End Role="databarang" Type="Self.databarang" Multiplicity="1" />
+    <End Role="datatransaksibarang" Type="Self.datatransaksibarang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="databarang">
+        <PropertyRef Name="kode_barang" />
+      </Principal>
+      <Dependent Role="datatransaksibarang">
+        <PropertyRef Name="kode_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_datatransaksibarang_datatransaksifull">
+    <End Role="datatransaksifull" Type="Self.datatransaksifull" Multiplicity="1" />
+    <End Role="datatransaksibarang" Type="Self.datatransaksibarang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="datatransaksifull">
+        <PropertyRef Name="kode_transaksi" />
+      </Principal>
+      <Dependent Role="datatransaksibarang">
+        <PropertyRef Name="kode_transaksi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ujicoba2Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="databarang" EntityType="Self.databarang" />
+    <EntitySet Name="datamember" EntityType="Self.datamember" />
+    <EntitySet Name="datapegawai" EntityType="Self.datapegawai" />
+    <EntitySet Name="datatransaksifull" EntityType="Self.datatransaksifull" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="datatransaksibarang" EntityType="Self.datatransaksibarang" />
+    <AssociationSet Name="FK_datatransaksibarang_databarang" Association="Self.FK_datatransaksibarang_databarang">
+      <End Role="databarang" EntitySet="databarang" />
+      <End Role="datatransaksibarang" EntitySet="datatransaksibarang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_datatransaksibarang_datatransaksifull" Association="Self.FK_datatransaksibarang_datatransaksifull">
+      <End Role="datatransaksifull" EntitySet="datatransaksifull" />
+      <End Role="datatransaksibarang" EntitySet="datatransaksibarang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

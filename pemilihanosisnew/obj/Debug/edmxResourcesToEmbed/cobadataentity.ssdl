@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ujicoba2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="databarang">
+    <Key>
+      <PropertyRef Name="kode_barang" />
+    </Key>
+    <Property Name="kode_barang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nama_barang" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="harga_beli" Type="bigint" Nullable="false" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="harga_jual" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datamember">
+    <Key>
+      <PropertyRef Name="idmember" />
+    </Key>
+    <Property Name="idmember" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="nama" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="diskon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datapegawai">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="idpegawai" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nama" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="level" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ujicoba2.dbo.datatransaksibarang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="datatransaksibarang">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="kode_barang" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="kode_transaksi" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="kode_barang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="jumlah" Type="int" Nullable="false" />
+    <Property Name="total" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datatransaksifull">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+    </Key>
+    <Property Name="kode_transaksi" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tanggal" Type="date" Nullable="false" />
+    <Property Name="harga_total" Type="bigint" Nullable="false" />
+    <Property Name="diskon" Type="int" Nullable="false" />
+    <Property Name="grand_total" Type="bigint" Nullable="false" />
+    <Property Name="member" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="petugas" Type="nvarchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_datatransaksibarang_databarang">
+    <End Role="databarang" Type="Self.databarang" Multiplicity="1" />
+    <End Role="datatransaksibarang" Type="Self.datatransaksibarang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="databarang">
+        <PropertyRef Name="kode_barang" />
+      </Principal>
+      <Dependent Role="datatransaksibarang">
+        <PropertyRef Name="kode_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_datatransaksibarang_datatransaksifull">
+    <End Role="datatransaksifull" Type="Self.datatransaksifull" Multiplicity="1" />
+    <End Role="datatransaksibarang" Type="Self.datatransaksibarang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="datatransaksifull">
+        <PropertyRef Name="kode_transaksi" />
+      </Principal>
+      <Dependent Role="datatransaksibarang">
+        <PropertyRef Name="kode_transaksi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ujicoba2ModelStoreContainer">
+    <EntitySet Name="databarang" EntityType="Self.databarang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datamember" EntityType="Self.datamember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datapegawai" EntityType="Self.datapegawai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datatransaksifull" EntityType="Self.datatransaksifull" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datatransaksibarang" EntityType="Self.datatransaksibarang" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [datatransaksibarang].[kode_transaksi] AS [kode_transaksi], 
+    [datatransaksibarang].[kode_barang] AS [kode_barang], 
+    [datatransaksibarang].[jumlah] AS [jumlah], 
+    [datatransaksibarang].[total] AS [total]
+    FROM [dbo].[datatransaksibarang] AS [datatransaksibarang]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_datatransaksibarang_databarang" Association="Self.FK_datatransaksibarang_databarang">
+      <End Role="databarang" EntitySet="databarang" />
+      <End Role="datatransaksibarang" EntitySet="datatransaksibarang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_datatransaksibarang_datatransaksifull" Association="Self.FK_datatransaksibarang_datatransaksifull">
+      <End Role="datatransaksifull" EntitySet="datatransaksifull" />
+      <End Role="datatransaksibarang" EntitySet="datatransaksibarang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

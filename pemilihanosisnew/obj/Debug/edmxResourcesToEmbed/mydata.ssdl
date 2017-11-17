@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bersamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="databarang">
+    <Key>
+      <PropertyRef Name="kode_barang" />
+    </Key>
+    <Property Name="kode_barang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nama_barang" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="harga" Type="bigint" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datamember">
+    <Key>
+      <PropertyRef Name="idmember" />
+    </Key>
+    <Property Name="idmember" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nama" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="diskon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datauser">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="iduser" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="level" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'bersama.dbo.transaksi_in' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="transaksi_in">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="nama_barang" />
+      <PropertyRef Name="harga" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+      <PropertyRef Name="bayar" />
+      <PropertyRef Name="kembali" />
+    </Key>
+    <Property Name="kode_transaksi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nama_barang" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="harga" Type="bigint" Nullable="false" />
+    <Property Name="jumlah" Type="int" Nullable="false" />
+    <Property Name="total" Type="bigint" Nullable="false" />
+    <Property Name="bayar" Type="bigint" Nullable="false" />
+    <Property Name="kembali" Type="bigint" Nullable="false" />
+    <Property Name="diskon" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'bersama.dbo.transaksibarang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="transaksibarang">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="nama_barang" />
+      <PropertyRef Name="harga" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="kode_transaksi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nama_barang" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="harga" Type="bigint" Nullable="false" />
+    <Property Name="jumlah" Type="int" Nullable="false" />
+    <Property Name="total" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transaksifull">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+    </Key>
+    <Property Name="kode_transaksi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tanggal" Type="datetime" Nullable="false" />
+    <Property Name="harga_total" Type="bigint" Nullable="false" />
+    <Property Name="diskon" Type="int" />
+    <Property Name="grand_total" Type="bigint" Nullable="false" />
+    <Property Name="bayar" Type="bigint" Nullable="false" />
+    <Property Name="kembali" Type="bigint" Nullable="false" />
+    <Property Name="petugas" Type="nvarchar" MaxLength="50" />
+    <Property Name="member" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="bersamaModelStoreContainer">
+    <EntitySet Name="databarang" EntityType="Self.databarang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datamember" EntityType="Self.datamember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datauser" EntityType="Self.datauser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaksifull" EntityType="Self.transaksifull" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaksi_in" EntityType="Self.transaksi_in" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [transaksi_in].[kode_transaksi] AS [kode_transaksi], 
+    [transaksi_in].[nama_barang] AS [nama_barang], 
+    [transaksi_in].[harga] AS [harga], 
+    [transaksi_in].[jumlah] AS [jumlah], 
+    [transaksi_in].[total] AS [total], 
+    [transaksi_in].[bayar] AS [bayar], 
+    [transaksi_in].[kembali] AS [kembali], 
+    [transaksi_in].[diskon] AS [diskon]
+    FROM [dbo].[transaksi_in] AS [transaksi_in]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="transaksibarang" EntityType="Self.transaksibarang" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [transaksibarang].[kode_transaksi] AS [kode_transaksi], 
+    [transaksibarang].[nama_barang] AS [nama_barang], 
+    [transaksibarang].[harga] AS [harga], 
+    [transaksibarang].[jumlah] AS [jumlah], 
+    [transaksibarang].[total] AS [total]
+    FROM [dbo].[transaksibarang] AS [transaksibarang]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

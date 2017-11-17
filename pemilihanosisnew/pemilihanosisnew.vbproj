@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A960329-C7BC-413A-94F1-BD64194E1E7C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>pemilihanosisnew.My.MyApplication</StartupObject>
+    <RootNamespace>pemilihanosisnew</RootNamespace>
+    <AssemblyName>pemilihanosisnew</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>pemilihanosisnew.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>pemilihanosisnew.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MyCustomControl1">
+      <HintPath>..\..\MyCustomControl1\MyCustomControl1\bin\Debug\MyCustomControl1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cetak.Designer.vb">
+      <DependentUpon>cetak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cetak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controlcandidat.Designer.vb">
+      <DependentUpon>controlcandidat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controlcandidat.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dataadmin.Designer.vb">
+      <DependentUpon>Dataadmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dataadmin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="datakandidat.Designer.vb">
+      <DependentUpon>datakandidat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="datakandidat.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="datapemilih1.Designer.vb">
+      <DependentUpon>datapemilih1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="datapemilih1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="datapemilih2.Designer.vb">
+      <DependentUpon>datapemilih2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="datapemilih2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="koneksi.vb" />
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="pemilihan2.Designer.vb">
+      <DependentUpon>pemilihan2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pemilihan2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pemilihanosisDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pemilihanosisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pemilihanosisDataSet.vb">
+      <DependentUpon>pemilihanosisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="relasi1DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relasi1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tabhasil.Designer.vb">
+      <DependentUpon>tabhasil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tabhasil.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tambahdatapemilih.Designer.vb">
+      <DependentUpon>tambahdatapemilih.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tambahdatapemilih.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tambahkandidat.Designer.vb">
+      <DependentUpon>tambahkandidat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tambahkandidat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tambah_admin.Designer.vb">
+      <DependentUpon>tambah_admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tambah_admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.vb">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cetak.resx">
+      <DependentUpon>cetak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cetakdatapemilih.rdlc" />
+    <EmbeddedResource Include="controlcandidat.resx">
+      <DependentUpon>controlcandidat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dataadmin.resx">
+      <DependentUpon>Dataadmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="datakandidat.resx">
+      <DependentUpon>datakandidat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="datapemilih1.resx">
+      <DependentUpon>datapemilih1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="datapemilih2.resx">
+      <DependentUpon>datapemilih2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pemilihan2.resx">
+      <DependentUpon>pemilihan2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tabhasil.resx">
+      <DependentUpon>tabhasil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tambahdatapemilih.resx">
+      <DependentUpon>tambahdatapemilih.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tambahkandidat.resx">
+      <DependentUpon>tambahkandidat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tambah_admin.resx">
+      <DependentUpon>tambah_admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="pemilihanosisDataSet.xsc">
+      <DependentUpon>pemilihanosisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pemilihanosisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pemilihanosisDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pemilihanosisDataSet.xss">
+      <DependentUpon>pemilihanosisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="relasi1DataSet.xsc">
+      <DependentUpon>relasi1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="relasi1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>relasi1DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="relasi1DataSet.xss">
+      <DependentUpon>relasi1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Database_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elections_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leaderboard_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator Male_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Property_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit User Male_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chevron Left_25px.png" />
+    <None Include="Resources\Chevron Right_25px.png" />
+    <None Include="Resources\Search_28px.png" />
+    <None Include="Resources\Plus_30px.png" />
+    <None Include="Resources\Delete Property_30px.png" />
+    <None Include="Resources\Delete File_30px.png" />
+    <None Include="Resources\Edit Property_30px1.png" />
+    <None Include="Resources\Microsoft Excel_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Rounded Right_30px.png" />
+    <None Include="Resources\Logo pilihanku.png" />
+    <None Include="Resources\Ballot_50px.png" />
+    <Content Include="setting.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

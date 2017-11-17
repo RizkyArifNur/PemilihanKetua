@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bersamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="databarang">
+    <Key>
+      <PropertyRef Name="kode_barang" />
+    </Key>
+    <Property Name="kode_barang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="harga" Type="Int64" Nullable="false" />
+    <Property Name="qty" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datamember">
+    <Key>
+      <PropertyRef Name="idmember" />
+    </Key>
+    <Property Name="idmember" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diskon" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="datauser">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="iduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="level" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transaksifull">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+    </Key>
+    <Property Name="kode_transaksi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tanggal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="harga_total" Type="Int64" Nullable="false" />
+    <Property Name="diskon" Type="Int32" />
+    <Property Name="grand_total" Type="Int64" Nullable="false" />
+    <Property Name="bayar" Type="Int64" Nullable="false" />
+    <Property Name="kembali" Type="Int64" Nullable="false" />
+    <Property Name="petugas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="member" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="transaksi_in">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="nama_barang" />
+      <PropertyRef Name="harga" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+      <PropertyRef Name="bayar" />
+      <PropertyRef Name="kembali" />
+    </Key>
+    <Property Name="kode_transaksi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="harga" Type="Int64" Nullable="false" />
+    <Property Name="jumlah" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Int64" Nullable="false" />
+    <Property Name="bayar" Type="Int64" Nullable="false" />
+    <Property Name="kembali" Type="Int64" Nullable="false" />
+    <Property Name="diskon" Type="Int32" />
+  </EntityType>
+  <EntityType Name="transaksibarang">
+    <Key>
+      <PropertyRef Name="kode_transaksi" />
+      <PropertyRef Name="nama_barang" />
+      <PropertyRef Name="harga" />
+      <PropertyRef Name="jumlah" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="kode_transaksi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nama_barang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="harga" Type="Int64" Nullable="false" />
+    <Property Name="jumlah" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="bersamaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="databarangs" EntityType="Self.databarang" />
+    <EntitySet Name="datamembers" EntityType="Self.datamember" />
+    <EntitySet Name="datausers" EntityType="Self.datauser" />
+    <EntitySet Name="transaksifulls" EntityType="Self.transaksifull" />
+    <EntitySet Name="transaksi_in" EntityType="Self.transaksi_in" />
+    <EntitySet Name="transaksibarangs" EntityType="Self.transaksibarang" />
+  </EntityContainer>
+</Schema>

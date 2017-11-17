@@ -1,0 +1,331 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+pemilihanosisnew
+</name>
+</assembly>
+<members>
+<member name="T:pemilihanosisnew.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Administrator_Male_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Ballot_50px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Chevron_Left_25px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Chevron_Right_25px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Database_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Delete_File_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Delete_Property_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Edit_Property_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Edit_Property_30px1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Edit_User_Male_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Elections_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Leaderboard_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Login_Rounded_Right_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Logo_pilihanku">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Microsoft_Excel_26px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.no_avatar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Plus_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Search_28px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pemilihanosisnew.My.Resources.Resources.Settings_30px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSet.datapemilihDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSet.datapemilihRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSet.datapemilihRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSetTableAdapters.datapemilihTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(pemilihanosisnew.pemilihanosisDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(pemilihanosisnew.pemilihanosisDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(pemilihanosisnew.pemilihanosisDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.UpdateAll(pemilihanosisnew.pemilihanosisDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:pemilihanosisnew.pemilihanosisDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.databarangDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datamemberDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datapegawaiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksibarangDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksifullDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.databarangRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datamemberRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datapegawaiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksibarangRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksifullRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.databarangRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datamemberRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datapegawaiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksibarangRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSet.datatransaksifullRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.databarangTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.datamemberTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.datapegawaiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.datatransaksibarangTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.datatransaksifullTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(pemilihanosisnew.relasi1DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(pemilihanosisnew.relasi1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(pemilihanosisnew.relasi1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.UpdateAll(pemilihanosisnew.relasi1DataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:pemilihanosisnew.relasi1DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
